@@ -18,7 +18,7 @@ uploaded_file = st.file_uploader("Upload a file", type=["pdf"])
 
 if uploaded_file is not None:
     images = convert_from_bytes(uploaded_file.getvalue())
-    with st.spinner("Processing..., this may take several seconds"):
+    with st.spinner("Processing... this may take several seconds"):
         processed_images = easy_ocr_process(images)
         processed_images2 = tesseract_ocr_process(images)
         # create 2 tabs for each OCR library
